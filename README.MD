@@ -36,6 +36,7 @@ This project simulates a real-world **marketing experimentation scenario** with 
 - Seaborn
 - Scikit-learn
 - Uplift Modeling Techniques
+- EDA
 
 ---
 
