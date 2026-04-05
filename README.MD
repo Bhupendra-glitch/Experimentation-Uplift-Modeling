@@ -1,78 +1,154 @@
-# 🛒 [BIGTARGET]: EDA & Uplift Modeling with Business Insights
+# 📊 Experimentation & Uplift Modeling Project
 
-## 📌 Project Overview
 
-This project focuses on **Exploratory Data Analysis (EDA)** and **Uplift Modeling** to predict customer response to marketing campaigns.
 
-The objective is to identify:
-
-- 🎯 Which customers are likely to respond to a marketing campaign
-- 📈 Which customers are influenced positively by treatment (marketing)
-- 💡 Actionable business insights from customer behavior
-
-This project simulates a real-world **marketing experimentation scenario** with control and test groups.
+This project focuses on **uplift modeling and experimentation** to optimize marketing campaigns by identifying customers who are most likely to respond positively to a treatment (e.g., promotion, SMS, or Viber message).
 
 ---
 
-## 📊 Problem Statement
+## 📌 Table of Contents
+- [Plan](#plan)
+- [Quick View](#quick-view)
+- [Missing Values](#missing-values)
+- [Outliers](#outliers)
+- [Test vs Control](#test-vs-control)
+- [Comparison on Some Features](#comparison-on-some-features)
+- [About Uplift Modeling](#about-uplift-modeling)
+- [Types of Customers](#types-of-customers)
+- [Our Model](#our-model)
+- [Insights](#insights)
+  - [Dependence of Purchase Share](#dependence-of-purchase-share)
+  - [Crazy Purchases](#crazy-purchases)
+  - [Response SMS & Viber](#response-sms--viber)
+  - [Aged People](#aged-people)
+- [Conclusion](#conclusion)
 
-- Target Variable: `response_att`
-- Goal: Predict whether a customer will respond to a marketing mailing
-- Dataset contains:
-  - 196 features
-  - Customer demographic data (age, number of children, etc.)
-  - Purchase statistics
-  - Discount behavior
-  - Treatment group (test/control)
+---
+
+## 🧠 Plan
+- Understand dataset structure  
+- Perform data cleaning  
+- Analyze treatment vs control groups  
+- Build uplift model  
+- Generate actionable insights  
+
+---
+
+## ⚡ Quick View
+Initial exploration of the dataset:
+- Data shape and features  
+- Distribution of variables  
+- Target variable overview  
+
+---
+
+## 🧹 Missing Values
+- Identified missing values in key columns  
+- Applied appropriate handling techniques:
+  - Imputation  
+  - Dropping irrelevant records  
+
+---
+
+## 📉 Outliers
+- Detected outliers using statistical methods  
+- Handled extreme values to improve model performance  
+
+---
+
+## ⚖️ Test vs Control
+- Compared:
+  - Treatment group (received campaign)  
+  - Control group (did not receive campaign)  
+
+- Key focus:
+  - Conversion rates  
+  - Behavioral differences  
+
+---
+
+## 🔍 Comparison on Some Features
+- Compared features like:
+  - Age  
+  - Income  
+  - Purchase behavior  
+- Observed how they impact response  
+
+---
+
+## 📈 About Uplift Modeling
+Uplift modeling helps identify:
+- Customers who will respond **only if treated**
+
+Unlike traditional models, it predicts:
+> **Incremental impact of treatment**
+
+---
+
+## 👥 Types of Customers
+- **Persuadable** → Respond only when treated ✅  
+- **Sure Things** → Will respond anyway  
+- **Lost Causes** → Won’t respond  
+- **Do Not Disturb** → Negative impact  
+
+---
+
+## 🤖 Our Model
+Implemented uplift modeling using:
+- Two-model approach (T-Learner)  
+- Machine learning models (e.g., Random Forest / Logistic Regression)  
+
+Evaluation metrics:
+- Uplift curve  
+- Qini curve  
+
+---
+
+## 📊 Insights
+
+### 📌 Dependence of Purchase Share
+- Purchase behavior varies significantly with treatment  
+
+### 🔥 Crazy Purchases
+- Some users show unusually high purchase patterns  
+
+### 📱 Response SMS & Viber
+- Communication channel impacts response rate  
+
+### 👴 Aged People
+- Older customers behave differently in campaigns  
+
+---
+
+## 🧾 Conclusion
+- Uplift modeling improves targeting efficiency  
+- Helps reduce marketing cost  
+- Identifies high-value customers  
+
+👉 Better than traditional A/B testing for personalized campaigns  
 
 ---
 
 ## 🛠️ Tech Stack
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Uplift Modeling Techniques
-- EDA
+- Python 🐍  
+- Pandas, NumPy  
+- Scikit-learn  
+- Matplotlib / Seaborn  
 
 ---
 
-## 📂 Project Structure
+## 💼 Future Work
+- Deploy model using Streamlit  
+- Use advanced causal ML (EconML, CausalML)  
+- Real-time targeting system  
 
 ---
 
-## 🔎 Project Workflow
-
-### 1️⃣ Data Understanding
-
-- 196 total columns
-- Target variable: `response_att`
-- Dataset divided into:
-  - Test group (treatment)
-  - Control group
-- Includes numerical and categorical features
+## 👤 Author
+**Bhupendra Sahu**  
+- 🎓 B.Tech Student  
+- 📊 Data Science Enthusiast  
 
 ---
 
-### 2️⃣ Data Preprocessing
-
-- Handling missing values
-- Encoding categorical variables
-    - Gender mapped to binary
-    - Group mapped to binary (test/control)
-- Feature transformation
-- Outlier detection
-
-Example transformation:
-
-```python
-gender_map = {'X': 0, 'M': 1}
-group_map = {'test': 0, 'control': 1}
-
-pdf['gender'] = pdf['gender'].map(gender_map)
-pdf['group'] = pdf['group'].map(group_map)
-
-kaggle - https://www.kaggle.com/code/mrmorj/bigtarget-eda-uplift-model-insights-task/notebook
+⭐ If you found this useful, give it a star!
