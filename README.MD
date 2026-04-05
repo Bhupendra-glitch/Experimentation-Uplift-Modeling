@@ -1,6 +1,6 @@
 # 📊 Experimentation & Uplift Modeling Project
 
-## 🚀 BIGTARGET Hackathon (LENTA)
+
 
 > Optimizing marketing campaigns using **causal inference and uplift modeling** to target the *right customers* and maximize ROI.
 
